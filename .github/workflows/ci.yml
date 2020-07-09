@@ -211,9 +211,38 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: env.RUNNING && matrix.target == 'gpr'
 
+  releases:
+    name: Upload build files
+    needs: cover
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Yarn Cache Directory
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache node dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Package dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Upload
+        uses: technote-space/action-gh-release@v2
+        with:
+          files: build/index.js
+          draft: true
+
   publishRelease:
     name: Create Release
-    needs: [package]
+    needs: [package, releases]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
