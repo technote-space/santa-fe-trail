@@ -25,8 +25,8 @@ export default class Game extends GameBase {
 
   protected getGameSettings(): GameSettings {
     return {
-      width: this.field.width * CHIP_SIZE,
-      height: this.field.height * CHIP_SIZE,
+      width: Field.width * CHIP_SIZE,
+      height: Field.height * CHIP_SIZE,
       fps: 10,
       stepLimit: ENERGY,
       perceptionNumber: 1,

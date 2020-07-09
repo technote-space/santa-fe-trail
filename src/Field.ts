@@ -24,12 +24,12 @@ export class Field {
     });
   }
 
-  public get width(): number {
+  public static get width(): number {
     // eslint-disable-next-line no-magic-numbers
     return 32;
   }
 
-  public get height(): number {
+  public static get height(): number {
     // eslint-disable-next-line no-magic-numbers
     return 32;
   }
@@ -43,17 +43,17 @@ export class Field {
     return this.rest <= 0;
   }
 
-  private positionToIndex(posX: number, posY: number): number {
+  private static positionToIndex(posX: number, posY: number): number {
     // eslint-disable-next-line no-magic-numbers
-    return posX + this.width * posY;
+    return posX + Field.width * posY;
   }
 
   private setFlag(posX: number, posY: number, flag: number): void {
-    this._field[this.positionToIndex(posX, posY)] = flag;
+    this._field[Field.positionToIndex(posX, posY)] = flag;
   }
 
   public getFlag(posX: number, posY: number): FieldFlags {
-    const index = this.positionToIndex(posX, posY);
+    const index = Field.positionToIndex(posX, posY);
 
     if (index in this._field) {
       return this._field[index];
