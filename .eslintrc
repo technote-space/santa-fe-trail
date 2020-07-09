@@ -30,29 +30,6 @@
         "properties": "always"
       }
     ],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true
-        }
-      }
-    ],
-    "valid-jsdoc": [
-      "error",
-      {
-        "requireReturn": false,
-        "preferType": {
-          "String": "string",
-          "Object": "object",
-          "Number": "number",
-          "Function": "function",
-          "Void": "void"
-        }
-      }
-    ],
     "quotes": [
       "error",
       "single",
