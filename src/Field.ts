@@ -54,7 +54,6 @@ export class Field {
 
   public getFlag(posX: number, posY: number): FieldFlags {
     const index = Field.positionToIndex(posX, posY);
-
     if (index in this._field) {
       return this._field[index];
     }
@@ -83,7 +82,7 @@ export class Field {
     }
   }
 
-  public getScore(): number {
+  public getFitness(): number {
     return this._ateCount / this._foods;
   }
 }

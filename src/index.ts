@@ -62,7 +62,7 @@ export default class Game extends GameBase {
     throw new Error('invalid index');
   }
 
-  protected performGetScore(): number {
-    return this.field.getScore();
+  protected performGetFitness(): number {
+    return this.field.getFitness();
   }
 }
