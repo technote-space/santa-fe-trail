@@ -1,5 +1,7 @@
 /* eslint-disable no-magic-numbers */
-export const FOODS = [
+import {FieldFlags} from './types';
+
+export const FOODS     = [
   [1, 0],
   [2, 0],
   [3, 0],
@@ -90,5 +92,11 @@ export const FOODS = [
   [26, 22],
   [23, 23],
 ];
-export const ENERGY = 400;
-export const CHIP_SIZE = 32;
+export const ENERGY    = 400;
+export const CHIP_SIZE = 24;
+export const COLORS    = {
+  [FieldFlags.None]: [255, 255, 255],
+  [FieldFlags.Food]: [255, 255, 51],
+  [FieldFlags.Visited]: [102, 102, 255],
+  [FieldFlags.Food | FieldFlags.Visited]: [255, 153, 0],
+};

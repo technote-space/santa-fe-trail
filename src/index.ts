@@ -2,7 +2,7 @@ import {GameBase, IGame, GaSettings, GameSettings} from '@technote-space/game-in
 import {Field} from './Field';
 import {Agent} from './Agent';
 import {FieldFlags} from './types';
-import {CHIP_SIZE, ENERGY} from './constant';
+import {CHIP_SIZE, ENERGY, COLORS} from './constant';
 
 export default class Game extends GameBase {
   private readonly field: Field;
@@ -92,5 +92,56 @@ export default class Game extends GameBase {
 
   protected performGetFitness(): number {
     return this.field.getFitness();
+  }
+
+  protected performDraw(context: CanvasRenderingContext2D): void {
+    // eslint-disable-next-line no-magic-numbers,id-length
+    for (let y = Field.height; --y >= 0;) {
+      // eslint-disable-next-line no-magic-numbers,id-length
+      for (let x = Field.width; --x >= 0;) {
+        const color       = COLORS[this.field.getFlag(x, y)];
+        context.fillStyle = `rgb(${color[0]},${color[1]},${color[2]})`;
+        context.fillRect(x * CHIP_SIZE, y * CHIP_SIZE, CHIP_SIZE, CHIP_SIZE);
+      }
+    }
+
+    context.fillStyle = 'rgb(52, 153, 102)';
+    if (this.agent.dirX) {
+      const x1 = this.agent.posX * CHIP_SIZE + (1 - this.agent.dirX) * CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const x2 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const y1 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 3; // eslint-disable-line no-magic-numbers
+      const y2 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 3 * 2; // eslint-disable-line no-magic-numbers
+      context.fillRect(x1, y1, x2 - x1, y2 - y1);
+
+      const px1 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const py1 = this.agent.posY * CHIP_SIZE;
+      const px2 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const py2 = this.agent.posY * CHIP_SIZE + CHIP_SIZE;
+      const px3 = this.agent.posX * CHIP_SIZE + (1 + this.agent.dirX) * CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const py3 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      context.beginPath();
+      context.moveTo(px1, py1);
+      context.lineTo(px2, py2);
+      context.lineTo(px3, py3);
+      context.fill();
+    } else {
+      const x1 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 3; // eslint-disable-line no-magic-numbers
+      const x2 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 3 * 2; // eslint-disable-line no-magic-numbers
+      const y1 = this.agent.posY * CHIP_SIZE + (1 - this.agent.dirY) * CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const y2 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      context.fillRect(x1, y1, x2 - x1, y2 - y1);
+
+      const px1 = this.agent.posX * CHIP_SIZE;
+      const py1 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const px2 = this.agent.posX * CHIP_SIZE + CHIP_SIZE; // eslint-disable-line no-magic-numbers
+      const py2 = this.agent.posY * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const px3 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      const py3 = this.agent.posY * CHIP_SIZE + (1 + this.agent.dirY) * CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
+      context.beginPath();
+      context.moveTo(px1, py1);
+      context.lineTo(px2, py2);
+      context.lineTo(px3, py3);
+      context.fill();
+    }
   }
 }
