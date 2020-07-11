@@ -20,7 +20,9 @@ export default class Game extends GameBase {
   }
 
   protected getGaSettings(): GaSettings {
-    return {};
+    return {
+      nodeCount: 50,
+    };
   }
 
   protected getGameSettings(): GameSettings {
@@ -28,7 +30,7 @@ export default class Game extends GameBase {
       width: Field.width * CHIP_SIZE,
       height: Field.height * CHIP_SIZE,
       fps: 10,
-      stepLimit: ENERGY,
+      actionLimit: ENERGY,
       perceptionNumber: 1,
       actionNumber: 3,
     };
@@ -51,6 +53,23 @@ export default class Game extends GameBase {
       default:
         break;
     }
+
+    if (this.gameSettings.actionLimit - this.step < this.field.rest) {
+      this.onFinished();
+    }
+  }
+
+  public actionExpression(index: number): string {
+    switch (index) {
+      case 0: // eslint-disable-line no-magic-numbers
+        return '前進';
+      case 1: // eslint-disable-line no-magic-numbers
+        return '左回転';
+      case 2: // eslint-disable-line no-magic-numbers
+        return '右回転';
+      default:
+        return '';
+    }
   }
 
   protected async performPerceive(index: number): Promise<boolean> | never {
@@ -60,6 +79,15 @@ export default class Game extends GameBase {
     }
 
     throw new Error('invalid index');
+  }
+
+  public perceiveExpression(index: number): string {
+    // eslint-disable-next-line no-magic-numbers
+    if (index === 0) {
+      return '餌';
+    }
+
+    return super.perceiveExpression(index);
   }
 
   protected performGetFitness(): number {
