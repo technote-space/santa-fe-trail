@@ -75,7 +75,7 @@ export default class Game extends GameBase {
   protected async performPerceive(index: number): Promise<boolean> | never {
     // eslint-disable-next-line no-magic-numbers
     if (index === 0) {
-      return this.field.is(this.agent.frontX, this.agent.frontY, FieldFlags.Food);
+      return this.field.is(this.agent.frontX, this.agent.frontY, FieldFlags.Food) && !this.field.is(this.agent.frontX, this.agent.frontY, FieldFlags.Visited);
     }
 
     throw new Error('invalid index');
