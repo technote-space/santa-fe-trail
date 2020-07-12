@@ -9,6 +9,8 @@ export class Field {
   private _foods    = 0;
   // eslint-disable-next-line no-magic-numbers
   private _ateCount = 0;
+  // eslint-disable-next-line no-magic-numbers
+  private _visited  = 0;
 
   constructor() {
     this.init();
@@ -67,6 +69,7 @@ export class Field {
   public onVisited(posX: number, posY: number): void {
     if (!this.is(posX, posY, FieldFlags.Visited)) {
       this.addFlag(posX, posY, FieldFlags.Visited);
+      this._visited++;
       if (this.is(posX, posY, FieldFlags.Food)) {
         this._ateCount++;
       }
@@ -74,6 +77,7 @@ export class Field {
   }
 
   public getFitness(): number {
-    return this._ateCount / this._foods;
+    // eslint-disable-next-line no-magic-numbers
+    return this._ateCount / this._foods - 0.01 / (this._visited + 1);
   }
 }
