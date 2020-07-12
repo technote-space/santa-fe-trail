@@ -101,13 +101,15 @@ export default class Game extends GameBase {
     for (let y = Field.height; --y >= 0;) {
       // eslint-disable-next-line no-magic-numbers,id-length
       for (let x = Field.width; --x >= 0;) {
-        const color       = COLORS[this.field.getFlag(x, y)];
-        context.fillStyle = `rgb(${color[0]},${color[1]},${color[2]})`;
+        const color         = COLORS[this.field.getFlag(x, y)];
+        context.fillStyle   = `rgb(${color[0]},${color[1]},${color[2]})`;
+        context.strokeStyle = 'rgb(0,0,0)';
         context.fillRect(x * CHIP_SIZE, y * CHIP_SIZE, CHIP_SIZE, CHIP_SIZE);
+        context.strokeRect(x * CHIP_SIZE, y * CHIP_SIZE, CHIP_SIZE, CHIP_SIZE);
       }
     }
 
-    context.fillStyle = 'rgb(52, 153, 102)';
+    context.fillStyle = 'rgb(52, 255, 102)';
     if (this.agent.dirX) {
       const x1 = this.agent.posX * CHIP_SIZE + (1 - this.agent.dirX) * CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers
       const x2 = this.agent.posX * CHIP_SIZE + CHIP_SIZE / 2; // eslint-disable-line no-magic-numbers

@@ -100,8 +100,8 @@ export const COUNT     = FOODS_POS.length;
 export const ENERGY    = 400;
 export const CHIP_SIZE = 24;
 export const COLORS    = {
-  [FieldFlags.None]: [255, 255, 255],
-  [FieldFlags.Food]: [255, 255, 51],
-  [FieldFlags.Visited]: [102, 102, 255],
-  [FieldFlags.Food | FieldFlags.Visited]: [255, 153, 0],
+  [FieldFlags.None]: [200, 200, 200],
+  [FieldFlags.Food]: [255, 228, 51],
+  [FieldFlags.Visited]: [102, 51, 255],
+  [FieldFlags.Food | FieldFlags.Visited]: [204, 102, 204],
 };
