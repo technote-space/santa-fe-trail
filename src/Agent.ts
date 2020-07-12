@@ -1,13 +1,14 @@
 import {Field} from './Field';
 
 export class Agent {
-  constructor(private field: Field) {
-  }
-
   private _posX = 0; // eslint-disable-line no-magic-numbers
   private _posY = 0; // eslint-disable-line no-magic-numbers
   private _dirX = 1; // eslint-disable-line no-magic-numbers
   private _dirY = 0; // eslint-disable-line no-magic-numbers
+
+  constructor(private field: Field) {
+    this.field.onVisited(this.posX, this.posY);
+  }
 
   public get posX(): number {
     return this._posX;

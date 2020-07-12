@@ -31,6 +31,8 @@ export default class Game extends GameBase {
       height: Field.height * CHIP_SIZE,
       fps: 10,
       actionLimit: ENERGY,
+      // eslint-disable-next-line no-magic-numbers
+      stepLimit: ENERGY * 2,
       perceptionNumber: 1,
       actionNumber: 3,
     };
