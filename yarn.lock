@@ -1071,10 +1071,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@technote-space/game-interface@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.4.6.tgz#2513f9cc4683470c22e200dae3d186252bbef601"
-  integrity sha512-ScRxxROamwC06Dec6rujHa4Ip+ZQSOCnM2iFWzd2Vy4q2msyMNCOztwjqM5ZODRQtiv+/awyWwqYFHonNX7nMA==
+"@technote-space/game-interface@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.4.7.tgz#b2e51be3602a30d641f55b0beaa58a7170740b76"
+  integrity sha512-Tmklstoxc2e1pnFGtsDChXSffnlpvGTAInPHVapojdTfMvRbVbGoYfrbClBv0en2Lc3o2eyjdWkodXFB1/PfNw==
 
 "@technote-space/github-action-test-helper@^0.5.1":
   version "0.5.1"
@@ -1931,9 +1931,9 @@ camelcase@^6.0.0:
   integrity sha512-8KMDF1Vz2gzOq54ONPJS65IvTUaB1cHJ2DMM7MbPmLZljDH1qpzzLsWdiN9pHh6qvkRVDTi/07+eNGch/oLU4w==
 
 caniuse-lite@^1.0.30001093:
-  version "1.0.30001097"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001097.tgz#1129c40c9f5ee3282158da08fd915d301f4a9bd8"
-  integrity sha512-TeuSleKt/vWXaPkLVFqGDnbweYfq4IaZ6rUugFf3rWY6dlII8StUZ8Ddin0PkADfgYZ4wRqCdO2ORl4Rn5eZIA==
+  version "1.0.30001099"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001099.tgz#540118fcc6842d1fde62f4ee5521d1ec6afdb40e"
+  integrity sha512-sdS9A+sQTk7wKoeuZBN/YMAHVztUfVnjDi4/UV3sDE8xoh7YR12hKW+pIdB3oqKGwr9XaFL2ovfzt9w8eUI5CA==
 
 chalk@3.0.0, chalk@^3.0.0:
   version "3.0.0"
