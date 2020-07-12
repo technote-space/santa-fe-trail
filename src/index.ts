@@ -55,10 +55,6 @@ export default class Game extends GameBase {
       default:
         break;
     }
-
-    if (this.gameSettings.actionLimit - this.step < this.field.rest) {
-      this.onFinished();
-    }
   }
 
   public actionExpression(index: number): string {
