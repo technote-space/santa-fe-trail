@@ -1,3 +1,1 @@
-import {WIDTH} from './constant';
-
-export const positionToIndex = (posX: number, posY: number): number => posX + WIDTH * posY;
+export const positionToIndex = (posX: number, posY: number, width: number): number => posX + width * posY;

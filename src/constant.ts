@@ -95,7 +95,7 @@ export const FOODS_POS = [
   [26, 22],
   [23, 23],
 ];
-export const FIELD     = Object.assign({}, ...FOODS_POS.map(([posX, posY]) => positionToIndex(posX, posY)).map(index => ({[index]: FieldFlags.Food})));
+export const FIELD     = Object.assign({}, ...FOODS_POS.map(([posX, posY]) => positionToIndex(posX, posY, WIDTH)).map(index => ({[index]: FieldFlags.Food})));
 export const COUNT     = FOODS_POS.length;
 export const ENERGY    = 400;
 export const CHIP_SIZE = 24;

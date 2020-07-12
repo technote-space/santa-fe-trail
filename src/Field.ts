@@ -42,11 +42,11 @@ export class Field {
   }
 
   private setFlag(posX: number, posY: number, flag: number): void {
-    this._field[positionToIndex(posX, posY)] = flag;
+    this._field[positionToIndex(posX, posY, WIDTH)] = flag;
   }
 
   public getFlag(posX: number, posY: number): FieldFlags {
-    const index = positionToIndex(posX, posY);
+    const index = positionToIndex(posX, posY, WIDTH);
     if (index in this._field) {
       return this._field[index];
     }
