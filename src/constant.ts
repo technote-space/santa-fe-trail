@@ -1,7 +1,10 @@
 /* eslint-disable no-magic-numbers */
 import {FieldFlags} from './types';
+import {positionToIndex} from './helper';
 
-export const FOODS     = [
+export const WIDTH     = 32;
+export const HEIGHT    = 32;
+export const FOODS_POS = [
   [1, 0],
   [2, 0],
   [3, 0],
@@ -92,6 +95,8 @@ export const FOODS     = [
   [26, 22],
   [23, 23],
 ];
+export const FIELD     = Object.assign({}, ...FOODS_POS.map(([posX, posY]) => positionToIndex(posX, posY)).map(index => ({[index]: FieldFlags.Food})));
+export const COUNT     = FOODS_POS.length;
 export const ENERGY    = 400;
 export const CHIP_SIZE = 24;
 export const COLORS    = {

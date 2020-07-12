@@ -1,5 +1,6 @@
+import {positionToIndex} from './helper';
 import {FieldFlags} from './types';
-import {FOODS} from './constant';
+import {WIDTH, HEIGHT, COUNT, FIELD} from './constant';
 
 export class Field {
   private _field: { [key: number]: FieldFlags } = {};
@@ -16,22 +17,17 @@ export class Field {
   private init() {
     this._foods    = 0;
     this._ateCount = 0;
-    this._field    = {};
-
-    FOODS.forEach(([posX, posY]) => {
-      this.onFood(posX, posY);
-      this._foods++;
-    });
+    this._visited  = 0;
+    this._field    = {...FIELD};
+    this._foods    = COUNT;
   }
 
   public static get width(): number {
-    // eslint-disable-next-line no-magic-numbers
-    return 32;
+    return WIDTH;
   }
 
   public static get height(): number {
-    // eslint-disable-next-line no-magic-numbers
-    return 32;
+    return HEIGHT;
   }
 
   public get rest(): number {
@@ -43,17 +39,12 @@ export class Field {
     return this.rest <= 0;
   }
 
-  private static positionToIndex(posX: number, posY: number): number {
-    // eslint-disable-next-line no-magic-numbers
-    return posX + Field.width * posY;
-  }
-
   private setFlag(posX: number, posY: number, flag: number): void {
-    this._field[Field.positionToIndex(posX, posY)] = flag;
+    this._field[positionToIndex(posX, posY)] = flag;
   }
 
   public getFlag(posX: number, posY: number): FieldFlags {
-    const index = Field.positionToIndex(posX, posY);
+    const index = positionToIndex(posX, posY);
     if (index in this._field) {
       return this._field[index];
     }
