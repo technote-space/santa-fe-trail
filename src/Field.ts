@@ -77,7 +77,11 @@ export class Field {
   }
 
   public getFitness(): number {
-    // eslint-disable-next-line no-magic-numbers
-    return this._ateCount / this._foods - 0.01 / (this._visited + 1);
+    const fitness = this._ateCount / this._foods;
+    if (fitness >= 1) { // eslint-disable-line no-magic-numbers
+      return fitness;
+    }
+
+    return fitness - 0.01 / (this._visited + 1); // eslint-disable-line no-magic-numbers
   }
 }
