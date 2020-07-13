@@ -29,7 +29,7 @@ export default class Game extends GameBase {
     return {
       width: Field.width * CHIP_SIZE,
       height: Field.height * CHIP_SIZE,
-      fps: 3,
+      fps: 8,
       playerFps: 1,
       actionLimit: ENERGY,
       // eslint-disable-next-line no-magic-numbers
