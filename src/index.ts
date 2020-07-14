@@ -2,7 +2,7 @@ import {GameBase, IGame, GaSettings, GameSettings} from '@technote-space/game-in
 import {Field} from './Field';
 import {Agent} from './Agent';
 import {FieldFlags} from './types';
-import {CHIP_SIZE, ENERGY, COLORS} from './constant';
+import {NAME, CHIP_SIZE, ENERGY, COLORS, FPS, STEP_LIMIT} from './constant';
 
 export default class Game extends GameBase {
   private readonly field: Field;
@@ -27,13 +27,12 @@ export default class Game extends GameBase {
 
   protected getGameSettings(): GameSettings {
     return {
+      name: NAME,
       width: Field.width * CHIP_SIZE,
       height: Field.height * CHIP_SIZE,
-      fps: 8,
-      playerFps: 1,
+      fps: FPS,
       actionLimit: ENERGY,
-      // eslint-disable-next-line no-magic-numbers
-      stepLimit: ENERGY * 2,
+      stepLimit: STEP_LIMIT,
       perceptionNumber: 1,
       actionNumber: 3,
     };

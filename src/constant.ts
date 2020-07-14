@@ -2,9 +2,10 @@
 import {FieldFlags} from './types';
 import {positionToIndex} from './helper';
 
-export const WIDTH     = 32;
-export const HEIGHT    = 32;
-export const FOODS_POS = [
+export const NAME       = 'santa fe trail';
+export const WIDTH      = 32;
+export const HEIGHT     = 32;
+export const FOODS_POS  = [
   [1, 0],
   [2, 0],
   [3, 0],
@@ -95,11 +96,13 @@ export const FOODS_POS = [
   [26, 22],
   [23, 23],
 ];
-export const FIELD     = Object.assign({}, ...FOODS_POS.map(([posX, posY]) => positionToIndex(posX, posY, WIDTH)).map(index => ({[index]: FieldFlags.Food})));
-export const COUNT     = FOODS_POS.length;
-export const ENERGY    = 400;
-export const CHIP_SIZE = 24;
-export const COLORS    = {
+export const FIELD      = Object.assign({}, ...FOODS_POS.map(([posX, posY]) => positionToIndex(posX, posY, WIDTH)).map(index => ({[index]: FieldFlags.Food})));
+export const COUNT      = FOODS_POS.length;
+export const ENERGY     = 400;
+export const STEP_LIMIT = ENERGY * 2;
+export const CHIP_SIZE  = 24;
+export const FPS        = 8;
+export const COLORS     = {
   [FieldFlags.None]: [200, 200, 200],
   [FieldFlags.Food]: [255, 228, 51],
   [FieldFlags.Visited]: [102, 51, 255],
