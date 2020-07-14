@@ -1071,10 +1071,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@technote-space/game-interface@^0.4.9":
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.4.9.tgz#93d85ed541aa9f94edb8fd1de4dbac11710dc534"
-  integrity sha512-liwVdchQic9RCvDrMNs7WDqJemNdC6tKDAMUgfsx+CQx4vrr6bRZx96B9A99FtoeH1drk/yjsn3RWotdW/FKgA==
+"@technote-space/game-interface@^0.4.10":
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.4.10.tgz#4a1063e73dd194ad314dd075c4c50f94b58ab612"
+  integrity sha512-j13ESJBlCyceReSowlelfK1Fpzorid/zvp5TT9BCos/aHRMRdD9ttNSXwfxbHPhxHN6K78kjW7Y5DUvT3DJGAQ==
 
 "@technote-space/github-action-test-helper@^0.5.2":
   version "0.5.2"
