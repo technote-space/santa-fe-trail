@@ -25,7 +25,7 @@
     "dist"
   ],
   "dependencies": {
-    "@technote-space/game-interface": "^0.4.9"
+    "@technote-space/game-interface": "^0.4.10"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
