@@ -2,7 +2,7 @@
 import {FieldFlags} from './types';
 import {positionToIndex} from './helper';
 
-export const NAME       = 'santa fe trail';
+export const NAME       = 'Santa Fe Trail';
 export const WIDTH      = 32;
 export const HEIGHT     = 32;
 export const FOODS_POS  = [
