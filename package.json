@@ -25,7 +25,7 @@
     "dist"
   ],
   "dependencies": {
-    "@technote-space/game-interface": "^0.4.10"
+    "@technote-space/game-interface": "^0.4.11"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -36,17 +36,17 @@
     "@babel/preset-typescript": "^7.10.4",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
-    "@technote-space/github-action-test-helper": "^0.5.3",
-    "@types/node": "^14.0.24",
-    "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
+    "@technote-space/github-action-test-helper": "^0.5.4",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^7.5.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "typescript": "^3.9.7",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12"
   },
   "publishConfig": {
