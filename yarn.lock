@@ -1013,10 +1013,10 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-9.1.1.tgz#d97ebc35d20eed6d8458361cbca5c7cb85d45184"
   integrity sha512-SXY8bCQ1qacJ8AUTUxjabY8G6OjSmMPLN9MBCzGaKOjpPNX6z8zbXTbk9oU3GHZLtcxweWLCi2n49IRS4iQlwg==
 
-"@technote-space/game-interface@^0.4.13":
-  version "0.4.13"
-  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.4.13.tgz#6d6861d248306db491b8be6e87a0f3fe8a935385"
-  integrity sha512-6ovFlr0WEU5PymGp4hgUPj+dh6GOwXBa1EcJhznX3pZ1RSMb1aYhh2sI1rZkamgEOK4dS5y2s5Efq20qG74WYw==
+"@technote-space/game-interface@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@technote-space/game-interface/-/game-interface-0.5.0.tgz#d41d2d34461164cf36753fa4c82993bc9a14451e"
+  integrity sha512-EH9a9n/cIap+AP97QZ8krz/QMdjTR8OWzqGCRaq2pvJUOJOqiRXA6nbtof94hAH5dGzg3wLY81wYzN4pF/Fz8A==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
