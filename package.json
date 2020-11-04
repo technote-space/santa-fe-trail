@@ -1,29 +1,37 @@
 {
   "name": "@technote-space/santa-fe-trail",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Santa Fe Trail",
-  "author": {
-    "name": "Technote",
-    "email": "technote.space@gmail.com",
-    "url": "https://technote.space"
-  },
-  "license": "MIT",
   "keywords": [
     "santa fe trail"
   ],
   "homepage": "https://github.com/technote-space/santa-fe-trail",
+  "bugs": {
+    "url": "https://github.com/technote-space/santa-fe-trail/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/technote-space/santa-fe-trail.git"
   },
-  "bugs": {
-    "url": "https://github.com/technote-space/santa-fe-trail/issues"
+  "license": "MIT",
+  "author": {
+    "name": "Technote",
+    "email": "technote.space@gmail.com",
+    "url": "https://technote.space"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "yarn clear && NODE_ENV=production webpack --progress --config webpack.config.js",
+    "clear": "rm -rf build*",
+    "lint": "eslint 'src/**/*.ts' --cache",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "test": "yarn lint",
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
+  },
   "dependencies": {
     "@technote-space/game-interface": "^0.5.6"
   },
@@ -50,13 +58,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "yarn clear && NODE_ENV=production webpack --progress --config webpack.config.js",
-    "test": "yarn lint",
-    "lint": "eslint 'src/**/*.ts' --cache",
-    "lint:fix": "eslint --fix 'src/**/*.ts'",
-    "clear": "rm -rf build*",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   }
 }
