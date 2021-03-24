@@ -15,7 +15,6 @@ export class Field {
   }
 
   private init() {
-    this._foods    = 0;
     this._ateCount = 0;
     this._field    = {...FIELD};
     this._foods    = COUNT;
@@ -57,10 +56,6 @@ export class Field {
 
   public is(posX: number, posY: number, flag: number): boolean {
     return (this.getFlag(posX, posY) & flag) === flag;
-  }
-
-  private onFood(posX: number, posY: number): void {
-    this.addFlag(posX, posY, FieldFlags.Food);
   }
 
   public onVisited(posX: number, posY: number): void {

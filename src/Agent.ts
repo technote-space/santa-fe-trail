@@ -40,8 +40,8 @@ export class Agent {
   }
 
   public goForward(): void {
-    this._posX = Math.min(Math.max(0, this._posX + this._dirX), Field.width - 1); // eslint-disable-line no-magic-numbers
-    this._posY = Math.min(Math.max(0, this._posY + this._dirY), Field.height - 1); // eslint-disable-line no-magic-numbers
+    this._posX = Math.min(Math.max(0, this.frontX), Field.width - 1); // eslint-disable-line no-magic-numbers
+    this._posY = Math.min(Math.max(0, this.frontY), Field.height - 1); // eslint-disable-line no-magic-numbers
     this.field.onVisited(this.posX, this.posY);
   }
 
