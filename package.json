@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/santa-fe-trail",
-  "version": "0.2.30",
+  "version": "0.2.31",
   "description": "Santa Fe Trail",
   "keywords": [
     "santa fe trail"
@@ -27,13 +27,13 @@
   "scripts": {
     "build": "yarn clear && NODE_ENV=production webpack --progress --config webpack.config.js",
     "clear": "rm -rf build*",
+    "postinstall": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/husky ] || husky install",
     "lint": "eslint 'src/**/*.ts' --cache",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
-    "test": "yarn lint",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit",
-    "postinstall": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/husky ] || husky install",
     "prepublishOnly": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/pinst ] || pinst --disable",
-    "postpublish": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/pinst ] || pinst --enable"
+    "postpublish": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/pinst ] || pinst --enable",
+    "test": "yarn lint",
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
     "@technote-space/game-interface": "^0.5.38"
