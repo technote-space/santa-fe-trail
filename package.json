@@ -36,7 +36,7 @@
     "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
-    "@technote-space/game-interface": "^0.5.42"
+    "@technote-space/game-interface": "^0.5.43"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
@@ -47,12 +47,12 @@
     "@babel/preset-typescript": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@types/node": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
+    "@types/node": "^18.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "pinst": "^3.0.0",
